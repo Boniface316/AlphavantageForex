@@ -1,87 +1,82 @@
+![GitHub repo size](https://img.shields.io/github/repo-size/Boniface316/AlphavantageForex)
+![GitHub top language](https://img.shields.io/github/languages/top/Boniface316/AlphavantageForex)
+![GitHub last commit](https://img.shields.io/github/last-commit/Boniface316/AlphavantageForex)
+
+
 # AlphavantageForex
 
-One Paragraph of project description goes here
+This library allows the user to download FX data from Alphavantage
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+This library is built to allow user to quickly download FX data from Alphavantage. You can visit [Alphavantage](http://alphavantage.co) to access documentation.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+API: Goto https://www.alphavantage.co/support/#api-key to claim your free API.
 
-```
-Give examples
-```
+devtools package
+
+
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
+Install this package
 ```
-Give the example
+devtools::install_github("Boniface316/AlphavantageForex")
 ```
+## Downloading data
 
-And repeat
-  
-  ```
-until finished
-```
+Please refer to ```interactive/download_FX_data.R``` to see intruction on downloading the data.
 
-End with an example of getting some data out of the system or using it for a little demo
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
+### Exploring data
 
 Explain what these tests test and why
 
+Exploring the currency frequency
 ```
-Give an example
+> head(EURUSD)
+             open   high    low  close
+2001-10-31 0.9048 0.9078 0.8983 0.8999
+2001-11-01 0.9000 0.9119 0.8990 0.9036
+2001-11-02 0.9037 0.9069 0.9004 0.9023
+2001-11-05 0.9030 0.9030 0.8940 0.8973
+2001-11-06 0.8973 0.8993 0.8953 0.8972
+2001-11-07 0.8976 0.9046 0.8935 0.8950
 ```
 
-### And coding style tests
+Start dates of major currency pairs downloaded
+```
+> lapply(masterData, head, n = 1)
+$EURUSD
+             open   high    low  close
+2001-10-31 0.9048 0.9078 0.8983 0.8999
 
-Explain what these tests test and why
+$USDJPY
+             open   high    low  close
+2001-10-31 121.98 122.62 121.61 122.31
+
+$GBPUSD
+             open  high  low close
+2001-10-31 1.4525 1.457 1.45 1.455
+
+$AUDUSD
+             open   high   low  close
+2001-10-31 0.5039 0.5064 0.502 0.5034
+
+$USDCHF
+             open   high    low  close
+2001-10-30 1.6301 1.6307 1.6148 1.6234
 
 ```
-Give an example
-```
 
-## Deployment
 
-Add additional notes about how to deploy this on a live system
+## Author
 
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **[Boniface Yogendran](https://github.com/Boniface316)** 
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
